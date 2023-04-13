@@ -5,7 +5,7 @@ export const newConnectionHandler = socket => {
     console.log("A new client connected! it's id is:", socket.id)
 
     // 1. Emit a "welcome" event to the connected client
-    socket.emit("welcome", { message: `HELLO ${socket.id}` })
+    socket.emit("welcome", { message: `${socket.id}` })
 
     // 2. Listens to event emitted from FE, called "setUsername" (it has to be same!). This event contains the username in the payload
     socket.on("setUsername", payload => {
